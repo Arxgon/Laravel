@@ -34,7 +34,7 @@ class ProductResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return static::getModel()::count();
+            return static::getModel()::count();
     }
 
     public static function getGloballySearchableAttributes(): array
@@ -65,7 +65,7 @@ class ProductResource extends Resource
                                 Forms\Components\TextInput::make('name')
                                     ->required()
                                     ->live(onBlur: true)
-                                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                                    ->afterStateUpdated(function(string $operation, $state, Forms\Set $set) {
                                         if ($operation !== 'create') {
                                             return;
                                         }
@@ -137,7 +137,7 @@ class ProductResource extends Resource
 
                         Forms\Components\Section::make('Associations')
                             ->schema([
-                                Forms\Components\Select::make('brand_id')
+                               Forms\Components\Select::make('brand_id')
                                     ->relationship('brand', 'name')
                                     ->required(),
 

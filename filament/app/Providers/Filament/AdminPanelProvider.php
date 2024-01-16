@@ -49,7 +49,7 @@ class AdminPanelProvider extends PanelProvider
                 'logout' => MenuItem::make()->label('Log Out')
             ])
             ->plugins([
-                // SpotlightPlugin::make()
+                SpotlightPlugin::make()
             ])
             ->font('Poppins')
             ->favicon('images/favicon.png')
